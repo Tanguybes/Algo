@@ -344,34 +344,6 @@ bool remove_rec(dico d, char * word, unsigned size)
 
 /* Recherche d'un mot dans le dictionnaire */
 bool contains_iter(dico d, char * word, unsigned size){
-    tree tempo;
-    for (int i = 0 ; i < size ; i++){
-       if (d[get_index(word[i])]==NULL){
-           return FALSE;
-       }
-       if(d[get_index(word[i])]->first == word[i]){
-           tempo=d[get_index(word[i])];
-           d=d[get_index(word[i])]->children;
-       }else{
-           return FALSE;
-       }
-   }
-   if(tempo->end_of_word){
-       return TRUE;
-   }
-   else{
-       return FALSE;
-   }
-
-}
-
-
-
-/* Ajout d'un mot dans le dictionnaire */
-
-
-/* Recherche d'un mot dans le dictionnaire */
-bool contains_iter(dico d, char * word, unsigned size){
 
     for (int i = 0 ; i < size ; i++){
       if (d[get_index(word[i])]==NULL){
@@ -435,7 +407,6 @@ bool remove_iter(dico d, char * word, unsigned size){
     d[get_index(word[i])]=NULL;
     return TRUE;
 }
-
 
 /*---------------------------------------------------------------------------*/
 //                     NOMBRE DE MOTS ET PRINT DICO
